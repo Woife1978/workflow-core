@@ -111,8 +111,7 @@ namespace WorkflowCore.UnitTests.Services
             Func<Task<ExecutionResult>> action = async () => await Runner.ExecuteStep(Context, Body);
 
             // Assert
-            action
-                .ShouldThrow<ApplicationException>()
+            action.Should().ThrowAsync<ApplicationException>()
                 .WithMessage("Failed");
         }
 

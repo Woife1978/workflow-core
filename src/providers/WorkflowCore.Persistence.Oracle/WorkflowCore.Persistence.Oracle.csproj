@@ -1,10 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <AssemblyTitle>Workflow Core Oracle Persistence Provider</AssemblyTitle>
     <VersionPrefix>1.0.0</VersionPrefix>
     <Authors>Christian Jundt</Authors>
-    <TargetFrameworks>net6.0</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <AssemblyName>WorkflowCore.Persistence.Oracle</AssemblyName>
     <PackageId>WorkflowCore.Persistence.Oracle</PackageId>
     <PackageTags>workflow;.NET;Core;state machine;WorkflowCore;Oracle</PackageTags>
@@ -16,25 +15,26 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <Description>Provides support to persist workflows running on Workflow Core to a Oracle database.</Description>
+    <AssemblyVersion>2024.9.21.1754</AssemblyVersion>
   </PropertyGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.*" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.*">
-		  <PrivateAssets>All</PrivateAssets>
-	  </PackageReference>
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.*">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	  </PackageReference>
-    <PackageReference Include="Oracle.EntityFrameworkCore">
-        <Version>7.21.13</Version>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-  </ItemGroup>  
-
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Oracle.EntityFrameworkCore">
+      <Version>7.21.13</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.23.50" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\WorkflowCore\WorkflowCore.csproj" />
     <ProjectReference Include="..\WorkflowCore.Persistence.EntityFramework\WorkflowCore.Persistence.EntityFramework.csproj" />
   </ItemGroup>
-
 </Project>
